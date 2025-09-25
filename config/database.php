@@ -18,7 +18,7 @@ try {
             user_id INTEGER NOT NULL,
             title TEXT NOT NULL,
             content TEXT NOT NULL,
-            FOREIGN KEY(user_id) REFERENCRS users(id)
+            FOREIGN KEY(user_id) REFERENCES users(id)
         );
     ");
 } catch (PDOException $e) {
