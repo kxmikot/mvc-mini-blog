@@ -17,7 +17,8 @@ class User {
 
     public function getByEmail($email) {
         $stmt = $this->pdo->prepare('SELECT * FROM users WHERE email = :email');
-        $stmt->execute([':email' => $email]);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
